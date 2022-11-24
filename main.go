@@ -24,10 +24,10 @@ func main() {
 	}
 	log.Printf("\n 初始添加了 3 个节点，%c[1;40;32m%s%c[0m\n\n", 0x1B, l.String(), 0x1B)
 
-	data := []int{3, 4, 3, 1, 2, 7, 1}
+	data := []int{3, 4, 3, 5}
 	var tmp int
 	for _, v := range data {
-		log.Printf("%c[1;40;32m%s%c[0m\n", 0x1B,fmt.Sprintf("\nGet %d", v),0x1B)
+		log.Printf("%c[1;40;32m%s%c[0m\n", 0x1B, fmt.Sprintf("\nGet %d", v), 0x1B)
 		l.Get(v)
 		if l.Count > tmp {
 			fmt.Printf("%c[1;40;31m%s%c[0m\n", 0x1B, l.String(), 0x1B)
@@ -39,5 +39,3 @@ func main() {
 	}
 	log.Printf("一共发生了 %d 次缺页中断", l.Count)
 }
-
-
